@@ -28,6 +28,7 @@ import com.segment.analytics.android.integrations.nielsendcr.NielsenDCRIntegrati
 import com.segment.analytics.android.integrations.quantcast.QuantcastIntegration;
 import com.segment.analytics.android.integrations.tapstream.TapstreamIntegration;
 import com.segment.analytics.android.integrations.branch.BranchIntegration;
+import com.zibann.littlehome.analytics.segment.integrations.littlehome.LittlehomeIntegration;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -166,6 +167,12 @@ public class SegmentModule extends ReactContextBaseJavaModule {
         if (isClassAvailable("com.segment.analytics.android.integrations.branch.BranchIntegration")) {
             analyticsBuilder.use(BranchIntegration.FACTORY);
         }
+
+        if (isClassAvailable("com.zibann.littlehome.analytics.segment.integrations.littlehome.LittlehomeIntegration")) {
+            analyticsBuilder.use(LittlehomeIntegration.FACTORY);
+        }
+
+
     }
 
     /**
